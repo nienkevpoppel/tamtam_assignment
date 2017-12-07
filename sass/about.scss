@@ -1,0 +1,81 @@
+$color-black: #000000;
+$color-white: white;
+$color-red: #FD5454;
+$color-grey: #8E8E8E;
+$lato: 'Lato', 'regular';
+$light: 300;
+$bold: 900;
+$lightbold: 700;
+$regular: 400;
+
+#section2
+{
+    text-align: center;
+    font-family: $lato;
+    height: 354px;
+    top: -40px;
+    background-color: $color-white;
+    
+    .paragraph
+    {
+        font-weight: $regular;
+        padding: 0 3% 0 3%;
+        height:196px;
+        font-size: 15px;
+        top: 98px;
+        max-width: 940px;
+        display: flex;
+    }
+}
+.title 
+{
+    font-weight: $bold;
+    margin: 0;
+    font-size: 20px;
+    padding: 60px 0 10px 0;
+}
+@media (min-width: 768px)
+{
+    img
+    {
+        max-height: 700px;
+    }
+    
+    #section2
+    {
+        height: 388px;
+        .title
+        {
+            font-size: 30px;
+        }
+        .paragraph
+        {
+            font-size: 20px;
+            padding: 0 9.5% 0 9.5%;
+        }
+    }
+}
+
+@media (min-width: 1024px)
+{
+    #section2
+    {
+        .paragraph
+        {
+            font-size: 24px;
+            padding: 0 14% 0 14%;   
+        }
+    }
+}
+    @media (min-width: 1440px)
+    {   
+        #section2
+        {
+            height: 430px;
+            .paragraph
+            {     
+                padding: 0 17% 0 17%;
+            }
+        }
+       
+}

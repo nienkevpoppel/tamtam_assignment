@@ -1,0 +1,40 @@
+$color-black: #000000;
+$color-white: white;
+$color-red: #FD5454;
+$color-grey: #8E8E8E;
+$lato: 'Lato', 'regular';
+$light: 300;
+$bold: 900;
+$lightbold: 700;
+$regular: 400;
+
+footer
+{
+    height: 100px;
+    background-color: $color-black;
+    margin: 0;
+    .social
+    {
+        height: 20px;
+        left: 50%;
+        bottom: 30px;
+        position: absolute;
+        z-index: 3;
+        transform: translate(-50%, -50%);
+        .fa
+        {
+            height: 20px;
+            float: left;
+            margin-right: 38px;
+            color: $color-white;
+            &:hover
+            {
+                color: $color-red;
+            }
+        }
+    }
+}
+
+
+
+

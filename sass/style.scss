@@ -1,0 +1,28 @@
+$color-black: #000000;
+$color-white: white;
+$color-red: #FD5454;
+$color-grey: #8E8E8E;
+$lato: 'Lato', 'regular';
+$light: 300;
+$bold: 900;
+$lightbold: 700;
+$regular: 400;
+
+@import "menu";
+@import "slider";
+@import "about";
+@import "feed";
+@import "footer";
+
+body{
+    margin: 0;
+    position: relative;
+    background-color: $color-white;
+}
+
+a
+{
+      text-decoration: none !important; 
+}
+
+ 

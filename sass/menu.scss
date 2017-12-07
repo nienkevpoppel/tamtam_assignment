@@ -1,0 +1,199 @@
+$color-black: #000000;
+$color-white: white;
+$color-red: #FD5454;
+$color-grey: #8E8E8E;
+$lato: 'Lato', 'regular';
+$light: 300;
+$bold: 900;
+$lightbold: 700;
+$regular: 400;
+
+header
+{
+  width: 100%;
+  height: 60px;
+  background-color: $color-black;
+} 
+
+#menuToggle
+{  
+    display: block;
+    position: relative;
+    top: 16px;
+    margin-left: 12px;
+    height: 100%;
+    z-index: 10;
+    -webkit-user-select: none;
+    user-select: none;
+    input
+    {
+        display: block;
+        width: 24px;
+        height: 21.5px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2; 
+        -webkit-touch-callout: none;
+    }
+
+    span
+    {
+        display: block;
+        max-width: 24px;
+        width: 24px;
+        height: 3px;
+        margin-bottom: 5px;
+        position: relative;
+        margin-right:0;
+        background: $color-white;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(1,1.0,1,1.0),
+                    background 0.5s cubic-bezier(1,1.0,1,1.0),
+                    opacity 0.55s ease;
+        &:first-child
+        {
+            transform-origin: 0% 0%;
+        } 
+        &:nth-last-child(2)
+        {
+          transform-origin: 0% 100%;
+        }
+    }  
+}
+ 
+#logo
+{
+    display: block;
+    width: 24px;
+    height: 6px;
+    top: 19px;
+    position: relative;
+    align-content: center;
+    left: 50%;
+    background-color: $color-white;
+    z-index: 1;
+    transform: rotate(-45deg) translateX(-50%);
+}
+ 
+#menuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(1px, 1px);
+    background: $color-white;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0.5px, 0px);
+}
+ 
+#menu
+{   
+   width: 100%;
+   position: absolute;
+   margin: 2px 0 0 -40px;
+   height: 100vh;
+   background: $color-black;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   transform-origin: 0% 0%;
+   left: 0;
+   transform: translate(-100%, 0);
+   transition: transform 0.5s cubic-bezier(1,1,1,1.0);
+   hr
+   {
+        margin: 9px 0 0 -80px;
+   }
+   li
+   {   
+        padding-top: 40px;
+        font-size: 29px;
+        text-align: center;
+        color: $color-white;
+        a
+        {
+            text-decoration: none;
+            font-family: $lato;
+            font-weight: $bold;
+            &:hover
+            {
+                transition: color 0.1s ease;
+                color: $color-red !important;
+            }
+        }
+    }
+}
+ 
+#menuToggle input:checked ~ ul
+{
+    transform: none;
+}
+
+@media (min-width: 768px)
+{
+   header
+   {
+     height: 80px;
+   }
+
+    #menuToggle 
+    {
+        span
+        {
+            display: none;
+        }
+
+        input
+        {
+            display: none;
+        }
+    }
+
+    #menu{
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        height: 62px;
+        margin-top: 5px;
+        position: relative;
+        float: left;
+        left: 120px;
+        max-width: 300px;
+        background: none;
+        li
+        {
+            color: $color-grey;
+            margin: 0;
+            padding-top: 0;
+            font-size: 17px;
+            margin-right: 3%;
+            display: inline-block;
+            transition: 2s display;
+            a
+            {
+                font-weight: $lightbold;
+            }
+        }
+        hr{
+            display: none;
+        }
+
+    }
+    #logo{
+        width: 32px;
+        height: 6px;
+        top: 24px;
+        left: 30px;
+        transition: 1s left;
+    }    
+}
